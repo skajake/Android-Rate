@@ -20,7 +20,7 @@ public final class AppRate {
 
     private final Context context;
 
-    private final DialogOptions options = new DialogOptions();
+    public final DialogOptions options = new DialogOptions();
 
     private int installDate = 10;
 
