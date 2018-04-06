@@ -19,7 +19,7 @@ final class Utils {
     }
 
     static int getDialogTheme(int dialogTheme) {
-        return isLollipop() ? R.style.CustomLollipopDialogStyle : 0;
+        return isLollipop() ? R.style.CustomLollipopDialogStyle : dialogTheme;
     }
 
     @SuppressLint("NewApi")
