@@ -18,16 +18,16 @@ final class Utils {
         return Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP || Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP_MR1;
     }
 
-    static int getDialogTheme() {
+    static int getDialogTheme(int dialogTheme) {
         return isLollipop() ? R.style.CustomLollipopDialogStyle : 0;
     }
 
     @SuppressLint("NewApi")
-    static AlertDialog.Builder getDialogBuilder(Context context) {
+    static AlertDialog.Builder getDialogBuilder(Context context, int dialogTheme) {
         if (underHoneyComb()) {
             return new AlertDialog.Builder(context);
         } else {
-            return new AlertDialog.Builder(context, getDialogTheme());
+            return new AlertDialog.Builder(context, getDialogTheme(dialogTheme));
         }
     }
 

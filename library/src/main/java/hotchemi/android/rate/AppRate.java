@@ -20,7 +20,7 @@ public final class AppRate {
 
     private final Context context;
 
-    public final DialogOptions options = new DialogOptions();
+    private final DialogOptions options = new DialogOptions();
 
     private int installDate = 10;
 
@@ -45,10 +45,10 @@ public final class AppRate {
         return singleton;
     }
 
-    public static boolean showRateDialogIfMeetsConditions(Activity activity) {
+    public static boolean showRateDialogIfMeetsConditions(Activity activity, int dialogTheme) {
         boolean isMeetsConditions = singleton.isDebug || singleton.shouldShowRateDialog();
         if (isMeetsConditions) {
-            singleton.showRateDialog(activity);
+            singleton.showRateDialog(activity, dialogTheme);
         }
         return isMeetsConditions;
     }
@@ -180,9 +180,9 @@ public final class AppRate {
         PreferenceHelper.setLaunchTimes(context, getLaunchTimes(context) + 1);
     }
 
-    public void showRateDialog(Activity activity) {
+    public void showRateDialog(Activity activity, int dialogTheme) {
         if (!activity.isFinishing()) {
-            create(activity, options).show();
+            create(activity, options, dialogTheme).show();
         }
     }
 
