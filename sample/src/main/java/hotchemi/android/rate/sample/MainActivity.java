@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
                 .setTextRateNow(R.string.new_rate_dialog_ok)
                 .monitor();
 
-        AppRate.showRateDialogIfMeetsConditions(this);
+        AppRate.showRateDialogIfMeetsConditions(this, 0);
     }
 
 }
